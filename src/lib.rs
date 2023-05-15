@@ -277,11 +277,11 @@ trait Searcher<N: NeedleWithSize + ?Sized> {
 
         let lane_unit = V::LANES;
         let mut chunks = haystack[..end].chunks_exact(lane_unit);
-        println!("v.lans:{} chunks:{}",lane_unit,chunks.len());
+        // println!("v.lans:{} chunks:{}",lane_unit,chunks.len());
         let mut start_index = 0;
         for chunk in &mut chunks {
             if dispatch!(self.vector_search_in_chunk(hash, chunk.as_ptr(), u32::MAX)) {
-                println!("match blur start index:{}",start_index);
+                // println!("match blur start index:{}",start_index);
                 return Some(start_index);
             }
             start_index += lane_unit;
