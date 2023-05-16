@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 memchr = "2.*"
 multiversion = { version = "0.6", default-features = false }
-seq-macro = "0.*"
+seq-macro = "0.2.*"
